@@ -9,16 +9,21 @@
 # SisSerach
 <h1># SisSerach</h1>
 <h2>Pesquisa em tabelas relacionadas</h2>
-
+<br/>
 Utilize as migrations para criação das tabela no banco [serach]
-
+<br/>
 m200315_231158_criar_tabela_local
+<br/>
 m200315_231913_insert_tabela_local
+<br/>
 m200315_234449_criar_tabela_equipamento
+<br/>
 m200316_001059_insert_tabela_equipamento
+<br/>
 m200316_002404_criar_tabela_entrada
+<br/>
 m200316_023723_insert_tabela_entrada
-
+<br/>
 
 Yii 2 Basic Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
 rapidly creating small projects.
