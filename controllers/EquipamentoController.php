@@ -84,10 +84,26 @@ class EquipamentoController extends Controller
      */
     public function actionUpdate($id)
     {
+        $equipamento = EQUIPAMENTO::findOne($id);
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->EQUIPAMENTO_COD_PK]);
+           
+
+            /** */
+        if($model->LOCAL_COD_FK == $equipamento->LOCAL_COD_FK)
+        {
+            //Yii::$app->session->setFlash('info' , "<b>Igual!<br>$equipamento->LOCAL_COD_FK -> $model->LOCAL_COD_FK</b>");
+        }else{
+
+            //Yii::$app->session->setFlash('info' , "<b>Diferente!<br>$equipamento->LOCAL_COD_FK -> $model->LOCAL_COD_FK</b>");
+            $model->EQUIPAMENTO_HISTORICO_LOCAL .=  $equipamento->LOCAL_COD_FK.';'.date('d/m/Y').';';
+            $model->save();
+
+        }
+        /** */
+            //return $this->redirect(['view', 'id' => $model->EQUIPAMENTO_COD_PK]);
+            return $this->redirect(['index']);
         }
 
         return $this->render('update', [

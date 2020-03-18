@@ -47,6 +47,12 @@ $config = [
             ],
         ],
         'db' => $db,
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+        ],
+        /*'authManager' => [
+            'class' => 'yii\rbac\PhpManager',
+        ],*/
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,
@@ -55,7 +61,7 @@ $config = [
             ],
         ],
         */
-        'urlManager' => [
+        /*'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
@@ -86,7 +92,7 @@ $config = [
         
                 ], 
             ],
-        ],
+        ],*/
     ],
     'params' => $params,
 ];

@@ -17,6 +17,7 @@ class m200315_234449_criar_tabela_equipamento extends Migration
             'EQUIPAMENTO_NOME' => $this->string(100)->notNull(),
             'EQUIPAMENTO_NUM_SERIE' => $this->string(100)->notNull(),
             'LOCAL_COD_FK' => $this->integer()->notNull(),
+            'EQUIPAMENTO_HISTORICO_LOCAL' => $this->string(4000)->notNull(),
         ]);
         
         $this->addForeignKey('EQUIPAMENTO_LOCAL_LOCALCODPK','{{%EQUIPAMENTO}}','LOCAL_COD_FK','{{%LOCAL}}','LOCAL_COD_PK');

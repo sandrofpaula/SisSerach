@@ -34,6 +34,7 @@ class EQUIPAMENTO extends \yii\db\ActiveRecord
             [['EQUIPAMENTO_NOME', 'EQUIPAMENTO_NUM_SERIE', 'LOCAL_COD_FK'], 'required'],
             [['LOCAL_COD_FK'], 'integer'],
             [['EQUIPAMENTO_NOME', 'EQUIPAMENTO_NUM_SERIE'], 'string', 'max' => 100],
+            [['EQUIPAMENTO_HISTORICO_LOCAL'], 'string', 'max' => 4000],
             [['LOCAL_COD_FK'], 'exist', 'skipOnError' => true, 'targetClass' => LOCAL::className(), 'targetAttribute' => ['LOCAL_COD_FK' => 'LOCAL_COD_PK']],
         ];
     }
@@ -48,6 +49,7 @@ class EQUIPAMENTO extends \yii\db\ActiveRecord
             'EQUIPAMENTO_NOME' => 'Nome',
             'EQUIPAMENTO_NUM_SERIE' => 'Num. Série',
             'LOCAL_COD_FK' => 'Local',
+            'EQUIPAMENTO_HISTORICO_LOCAL' => 'Histórico de remanejamento',
         ];
     }
     /**
